@@ -1,0 +1,41 @@
+<h2 class="text-primary my-5">Calculette</h2>
+<form #form="ngForm">
+    <div>
+        <label for="valeur1">Valeur 1</label>
+        <input type="number" id="valeur1" [(ngModel)]="valeur1" name="valeur1" required>
+    </div>
+    <div>
+        <label for="valeur2">Valeur 2</label>
+        <input type="number" id="valeur2" [(ngModel)]="valeur2" name="valeur1" required>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button class="btn" [disabled]="form.invalid" (click)="calculer($event)">
+                +
+            </button>
+        </div>
+        <div class="col-3">
+            <button class="btn" [disabled]="form.invalid" (click)="calculer($event)">
+                -
+            </button>
+        </div>
+        <div class="col-3">
+            <button class="btn" [disabled]="form.invalid" (click)="calculer($event)">
+                *
+            </button>
+        </div>
+        <div class="col-3">
+            <button class="btn" [disabled]="form.invalid" (click)="calculer($event)">
+                /
+            </button>
+        </div>
+
+    </div>
+</form>
+@if (resultat != null) {
+<div class="container">
+    {{ valeur1 }} {{ operateur }} {{ valeur2 }} = {{ resultat }}
+</div>
+} @else {
+<p>{{ erreur }} </p>
+}

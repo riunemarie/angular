@@ -1,0 +1,44 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+@Component({
+  selector: 'app-tableau',
+  imports: [CommonModule],
+  templateUrl: './tableau.html',
+  styleUrl: './tableau.css',
+})
+export class TableauComponent{
+ tableau : number[]= [2, 3, 8, 5, 1];
+currentIndex: number = 0;  // élément affiché
+
+    suivant() {
+    this.currentIndex = (this.currentIndex + 1) % this.tableau.length;
+  }
+
+  precedent() {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.tableau.length) % this.tableau.length;
+  }
+}
+
+
+<h2 class="my-5 text-primary">TABLEAU</h2>
+
+
+<ul>
+  <li *ngFor="let n of tableau">{{ n }}</li>
+</ul>
+<h3>Élément courant :</h3>
+<p>{{ tableau [currentIndex] }}</p>
+
+<a href="#" (click)="precedent(); $event.preventDefault()">
+  ⬅️ Précédent
+</a>
+
+&nbsp; | &nbsp;
+
+<a href="#" (click)="suivant(); $event.preventDefault()">
+  Suivant ➡️
+</a>
+
+<hr>
+

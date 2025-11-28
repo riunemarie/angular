@@ -1,12 +1,14 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
-//config globale d'une application angular
+
+// la configuration globale d'une application Angular
+
 export const appConfig: ApplicationConfig = {
-  //fournisseurs
+  // fournisseurs
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
+    provideRouter(routes, withComponentInputBinding())
   ]
 };

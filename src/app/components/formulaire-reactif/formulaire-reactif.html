@@ -1,0 +1,45 @@
+<h2>Formulaire réactif (Sans FormBuilder)</h2>
+<form [formGroup]="personneForm" (ngSubmit)="afficher()">
+    <div>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" formControlName="nom">
+        @if (nom.errors) {
+        @if (nom.errors['required']) {
+        <span>Ce champ est obligatoire</span>
+        } @else {
+        {{ nom.errors['majuscule'] }}
+        }
+        }
+    </div>
+    <div>
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" formControlName="prenom">
+        @if (prenom.errors) {
+        @if (prenom.errors['required']) {
+        <span>Ce champ est obligatoire</span>
+        } @else {
+        Ce champ doit commencer par une majuscule et contenir entre 3 et 30 lettres et espaces
+        }
+        }
+
+    </div>
+    <div>
+        <label for="age">Âge</label>
+        <input type="text" id="age" formControlName="age">
+        @if (age.errors) {
+        <span>Ce champ est obligatoire</span>
+        }
+    </div>
+
+
+    <div>
+        <button [disabled]="personneForm.invalid">
+            Afficher
+        </button>
+    </div>
+</form>
+<ul>
+    @for (p of personnes; track $index) {
+    <li>{{ p.nom }} {{ p.prenom }}</li>
+    }
+</ul>
