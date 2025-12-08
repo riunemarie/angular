@@ -1,0 +1,7 @@
+<li>
+    {{ produit().nom }}, {{ produit().prix }}€ en {{ produit().quantite }} pièces
+    <input type="number" placeholder="quantité" [(ngModel)]="qteCommandee" min="0" [max]="produit().quantite">
+    <button (click)="ajouterPanier()" class="btn" [disabled]="isDisabled">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+</li>

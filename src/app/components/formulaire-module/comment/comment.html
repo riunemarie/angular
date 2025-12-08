@@ -1,0 +1,41 @@
+<h2>Personne avec ses commentaires</h2>
+<form (ngSubmit)="ajouterPersonne()" [formGroup]="personForm">
+    <div>
+        <input type="text" formControlName="nom" placeholder="Votre nom">
+    </div>
+    <div>
+        <input type="text" formControlName="prenom" placeholder="Votre prénom">
+    </div>
+    <div formArrayName="commentaires">
+        <h3>Commentaires</h3>
+        <div>
+            <button type="button" (click)="ajouterCommentaire()">
+                Ajouter commentaire
+            </button>
+        </div>
+        <ul>
+            @for (comment of commentaires.controls; track comment) {
+            <li [formGroupName]="$index">
+                <input type="text" formControlName="titre" placeholder="titre">
+                <input type="text" formControlName="contenu" placeholder="contenu">
+                <input type="text" formControlName="categorie" placeholder="categorie">
+            </li>
+            }
+        </ul>
+    </div>
+    <div>
+        <button>
+            Afficher
+        </button>
+    </div>
+</form>
+<ul>
+    @for (p of persons; track $index) {
+    <li>
+        {{ p.prenom }} {{ p.nom }}
+        @for(c of p.commentaires; track $index) {
+        {{ c.titre }} {{ c.contenu }} {{ c.categorie}}
+        }
+    </li>
+    }
+</ul>

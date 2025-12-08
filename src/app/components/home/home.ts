@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CompteurComponent } from "../interaction-module/compteur/compteur";
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [CompteurComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

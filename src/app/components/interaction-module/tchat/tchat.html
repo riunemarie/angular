@@ -1,0 +1,16 @@
+<h2 class="text-primary my-5">Tchat</h2>
+<div>
+    Nom : <input type="text" [(ngModel)]="nom">
+    <button (click)="ajouterParticpant()" class="btn">
+        <i class="fa-solid fa-user"></i>
+    </button>
+</div>
+<div class="container">
+    <div class="row">
+        @for (n of noms; track $index) {
+        <div class="col-4">
+            <app-participant [nom]="n" />
+        </div>
+        }
+    </div>
+</div>

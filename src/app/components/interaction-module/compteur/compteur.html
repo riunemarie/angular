@@ -1,0 +1,15 @@
+<h3 class="text-primary my-3">Compteur : {{ signe }}</h3>
+<div>
+    <input type="number" [(ngModel)]="val">
+    <button (click)="ajouter()" class="btn">
+        <i class="fa-regular fa-square-plus"></i>
+    </button>
+</div>
+<button (click)="decrementer()" class="btn">
+    <i class="fa-solid fa-minus"></i>
+</button>
+<span>{{ valeur }}</span>
+<!-- <span>{{ valeur$ | async }}</span> -->
+<button (click)="incrementer()" class="btn">
+    <i class="fa-solid fa-plus"></i>
+</button>

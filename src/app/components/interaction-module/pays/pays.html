@@ -1,0 +1,12 @@
+<h2 class="text-primary my-5">Pays - ville</h2>
+<div>
+    @for(elt of villes; track elt; let i = $index) {
+    {{ elt }}
+    }
+</div>
+<div>
+    @for(elt of villes; track elt; let i = $index) {
+    <app-ville [(ville)]="villes[i]"  />
+    
+    }
+</div>

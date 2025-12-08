@@ -1,13 +1,15 @@
+
 import { Component } from '@angular/core';
 import Stagiaire from '../../classes/stagiaire';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from "@angular/router";
 import { GetCharPipe } from "../../pipes/get-char-pipe";
 import { EvenValuePipe } from "../../pipes/evenvalue-pipe";
+import { CompteurComponent } from "../interaction-module/compteur/compteur";
 
 @Component({
   selector: 'app-about',
-  imports: [CommonModule, RouterLink, GetCharPipe, EvenValuePipe],
+  imports: [CommonModule, RouterLink, GetCharPipe, EvenValuePipe, CompteurComponent],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })

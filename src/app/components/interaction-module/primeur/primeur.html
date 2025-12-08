@@ -1,0 +1,16 @@
+<h2 class="text-primary my-5">Primeur : total = {{ total }}</h2>
+<div>
+    <input type="text" [(ngModel)]="produit.nom" placeholder="nom">
+    <input type="number" [(ngModel)]="produit.prix" placeholder="prix">
+    <input type="number" [(ngModel)]="produit.quantite" placeholder="quantite">
+    <button class="btn" (click)="ajouterProduit()">
+        Ajouter
+    </button>
+</div>
+
+
+<ul>
+    @for (p of produits; track $index) {
+    <app-produit [produit]="p" (onSendQuantity)="calculerTotal($index)"/>
+    }
+</ul>

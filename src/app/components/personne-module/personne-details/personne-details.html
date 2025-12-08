@@ -1,0 +1,5 @@
+<h2>Informations sur la personne numéro {{ id() }}</h2>
+<app-personne-form 
+    [personne]="personne()" 
+    label="Modifier"
+    (onSubmit)="enregistrer()"/>

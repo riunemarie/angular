@@ -1,0 +1,21 @@
+<h2 class="text-primary my-5">Page de connexion</h2>
+<form (ngSubmit)="seConnecter()" #form="ngForm">
+    <div>
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" name="username" [(ngModel)]="user.username" required minlength="3">
+    </div>
+    <div>
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" [(ngModel)]="user.password" minlength="3">
+    </div>
+    <div>
+        <button [disabled]="form.invalid">
+            Se connecter
+        </button>
+    </div>
+</form>
+@if (erreur()) {
+<div class="alert alert-danger my-5" role="alert">
+    {{ erreur() }}
+</div>
+}

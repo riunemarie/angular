@@ -1,0 +1,68 @@
+<nav>
+    <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="">Accueil</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/about">À propos</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/observable">Observable</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/subject">Subject</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/computed">Valeurs calculées</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/formulaire">Template-driven forms</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/calculette">Calculette</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/reactive">Reactive Forms</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/builder">Reactive Forms (FB)</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/comment">Commentaire</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/signal-form">Signal Forms (Angular 21)</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/personne">Service + HTTP</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/pere">@Input et input</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/parent">@Output et output</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/primeur">Primeur</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/clavier">Clavier virtuel</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/pays">Pays/ville</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/container">Subject + Service</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/tchat">Tchat</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/panier">
+                Panier :
+                Nombre de produits = {{ nombreProduit$ | async }},
+                Quantité totale = {{ quantiteTotale$ | async }}
+            </a>
+        </li>
+    </ul>
+</nav>

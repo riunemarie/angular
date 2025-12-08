@@ -1,0 +1,21 @@
+<h3 class="text-primary my-3">Panier</h3>
+<ul>
+    @for (item of lignesCommandes; track $index) {
+    <li>
+        {{ item.produit.nom }}
+        {{ item.produit.prix }} €
+        <button class="btn" (click)="decrementerQuantite(item.produit.nom)" >
+            <i class="fa-solid fa-minus"></i>
+        </button>
+        {{ item.qteReservee }}
+        <button class="btn"  (click)="incrementerQuantite(item.produit.nom)" [disabled]="item.qteReservee >= item.produit.quantite">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+        <button class="btn" (click)="supprimer(item.produit.nom)">
+            <i class="fa-solid fa-xmark text-danger"></i>
+        </button>
+    </li>
+    } @empty {
+    <li>Votre panier est vide...</li>
+    }
+</ul>

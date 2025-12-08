@@ -1,0 +1,13 @@
+<h2 class="text-primary my-5">Clavier virtuel</h2>
+<div class="container">
+    <div class="row">
+        @for (letter of lettres; track $index) {
+        <div class="col-2">
+            <app-touche [lettre]="letter" (onSendLetter)="updateText($index)" />
+        </div>
+        }
+    </div>
+    <div class="row">
+        <textarea class="offset-2 col-8">{{ text }}</textarea>
+    </div>
+</div>
